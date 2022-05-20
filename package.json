@@ -84,7 +84,8 @@
     "lint": "eslint . --ext .ts,.tsx --cache",
     "lint:fix": "pnpm lint --fix",
     "coverage": "jest --coverage",
-    "test": "tsc --noEmit -p test && jest"
+    "test": "tsc --noEmit -p test && jest",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "husky": {
     "hooks": {
@@ -99,6 +100,8 @@
     ]
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.22.2",
+    "@playwright/test": "^1.22.2",
     "@swc/core": "1.2.186",
     "@swc/jest": "0.2.21",
     "@testing-library/jest-dom": "^5.16.4",

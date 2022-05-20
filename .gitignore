@@ -14,3 +14,6 @@ tsconfig.tsbuildinfo
 coverage
 */**/.turbo
 .turbo
+/test-results/
+/playwright-report/
+/playwright/.cache/

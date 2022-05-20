@@ -4,6 +4,5 @@
     "rootDir": "..",
     "strict": false
   },
-  "include": [".", "./jest-setup.ts"],
-  "exclude": ["./type/mutator.ts"]
+  "include": ["."],
 }
