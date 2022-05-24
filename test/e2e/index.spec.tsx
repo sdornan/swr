@@ -6,12 +6,13 @@ import Provider from './__fixture__/Provider'
 test.use({ viewport: { width: 500, height: 500 } })
 
 test.describe('SWR e2e', () => {
-  test('Nested SWR hook should only do loading once', async ({ mount, page }) => {
+  test('Nested SWR hook should only do loading once', async ({ mount }) => {
     const key = createKey()
     let count = 0
     const component = await mount(
       <Provider>
         <Profiler id={key} onRender={() => {
+          // this will not execute in production mode
           count += 1
         }}>
           <NestedRender swrKey={key}></NestedRender>
