@@ -26,7 +26,12 @@ const config: PlaywrightTestConfig = {
     ctPort: 3100,
     ctViteConfig: {
       define: {
-        "process.env.NODE_ENV": '"development"'
+        'process.env.NODE_ENV': '"development"'
+      },
+      resolve: {
+        alias: {
+          'react-dom$': 'react-dom/profiling'
+        }
       }
     }
   },
@@ -35,6 +40,24 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome']
+      }
+    },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox']
+      }
+    },
+    {
+      name: 'edge',
+      use: {
+        ...devices['Desktop Edge']
+      }
+    },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari']
       }
     }
   ]
