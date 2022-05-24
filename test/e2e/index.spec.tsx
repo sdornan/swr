@@ -12,9 +12,7 @@ test.describe('SWR e2e', () => {
     const component = await mount(
       <Provider>
         <Profiler id={key} onRender={() => {
-          // this will execute in production mode
           count += 1
-          console.log('render')
         }}>
           <NestedRender swrKey={key}></NestedRender>
         </Profiler>
